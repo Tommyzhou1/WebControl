@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free Bootstrap | webthemez</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://webthemez.com" />
+<!-- css -->
+<link href="bootstrap.min.css" rel="stylesheet" />
+<link href="fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="jcarousel.css" rel="stylesheet" />
+<link href="flexslider.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" />
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+    <script>
+      
+    </script>
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <include src="contact.html"></include>
+<div id="wrapper">
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li> 
+						<li><a id =server-time>About Us</a></li>
+						<li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="active"><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">Bouncing Ball</h2>
+			</div>
+		</div>
+	</div>
+	<section id="content">
+	<div class="container2">
+	<div class="row"> 
+		<div class="col-md-12">
+			<div class="txtContent">
+				<head>
+
+					<title>Ball Breakout</title>
+					<style>
+						.container2{
+							display: flex;
+							justify-content: center;
+						}
+						#canvas{
+							background-color:#123456;
+						}
+					</style>
+				</head>
+				<div class="container2">
+					<div class="modal" id="myModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+						
+								<div class="modal-header">
+									<h4 class="modal-title" id="myModal-label">Game Over!!!</h4>
+								</div>
+						
+								<div class="modal-body">
+									<p id="myText">Better Luck Next Time!!</p>
+								</div>
+						
+								<div class="modal-footer">
+									<button type="button" data-dismiss="modal" class="btn btn-success btn-default" onclick="window.location.reload();">Play Again!</button>
+								</div>
+							  </div>
+						</div>
+						</div>
+					<canvas id="canvas"></canvas>
+					<div>
+						<button type="button" class="btn btn-primary">
+							Game Level <span class="badge badge-light" id="gamelevel"></span>
+						</button>
+						<br>
+						<button type="button" class="btn btn-primary">
+						Life Remaining <span class="badge badge-light" id="liferemaining"></span>
+						</button>
+						<br>
+						<button type="button" class="btn btn-primary btn-lg" onclick="nextlevel();">Next Level</button>
+					</div>
+							
+				
+				<script src="breakout.js"></script>
+				</div>
+
+</body>
+</html>
