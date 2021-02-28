@@ -5,7 +5,7 @@
 // const INDEX = '/index.html';
 
 // const server = express()
-//   .se((req, res) => res.sendFile(INDEX, { root: __dirname }))
+//   .set((req, res) => res.sendFile(INDEX, { root: __dirname }))
 //   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 // const io = socketIO(server);
@@ -25,12 +25,13 @@
 
 // TEST
 
-//const socketIO = require('socket.io')
-const io = require('socket.io')(3000)
 const express = require('express')
 const app = express()
-const port = 3000
+const socket = require('socket.io')
 
+const server = app.listen(3000, () => {
+  console.log("server is running on port", server.address().port);
+ });
 
 app.use(express.static('css'))
 app.use(express.static('img'))
@@ -56,22 +57,18 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(port, () => console.info(`Listening on ${port}`))
+// app.listen(port, () => console.info(`Listening on ${port}`))
 
-// create a listener:
 
+const io = socket(server)
+
+var temp
 
 io.on('connection', function(client){
-  client.emit("welcome","hi") //This is received by everyone
+  client.emit("welcome","hi"); //This is received by everyone
+  client.on("message", function(data){
+    temp = data
+    console.log(data)
+    client.broadcast.emit("broadcast",data)
+  })
 })
-// const io = socxketIO(server)
-
-// var temp
-
-// io.on('connection', function(client){
-//   client.emit("welcome","hi"); //This is received by everyone
-//   client.on("message", function(data){
-//     temp = data
-//     client.broadcast.emit("broadcast",data)
-//   })
-// })
