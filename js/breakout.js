@@ -86,7 +86,7 @@ let socket = io();
 let el;
 
 socket.on('broadcast', (msg) => {
-    el = document.getElementById('server-time');
+    el = document.getElementById('gesture');
     el.innerHTML = msg;
     if (msg == "left") {
         isLeft = true;

@@ -53,6 +53,6 @@ io.on('connection', function(client){
   client.on("message", function(data){
     temp = data
     console.log(data)
-    client.broadcast.emit("broadcast",data)
+    io.sockets.emit("broadcast",data)
   })
 })

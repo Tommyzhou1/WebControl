@@ -21,39 +21,6 @@
 </head>
 <body>
 
-	<script>
-		let socket = io();
-		let el;
-
-		socket.on('broadcast', (msg) => {
-			el = document.getElementById('server-time');
-			el.innerHTML = msg;
-			if (msg == "scroll up") {
-				
-				window.scrollBy(0, -100);
-
-
-			} else if (msg == "scroll down") {
-
-				window.scrollBy(0, 100);
-
-
-			} else if (msg == "zoom in"){
-
-				document.body.style.zoom = "60%" 
-
-
-			}else if (msg == "zoom out"){
-				
-				document.body.style.zoom = "-60%" 
-
-			}
-
-		});
-	</script>
-
-
-
 <div id="wrapper">
 	<!-- start header -->
 	<header>
@@ -93,7 +60,7 @@
 	<div class="container">
 	<div class="row"> 
 							<div class="col-md-12">
-								<div class="about-logo">
+								<div id = "moves" class="about-logo">
 									<h3>Get In Touch!</h3>
 									<p>If you have further question, please contact us !</p>
                                     	<p>Si vous avez d'autres questions, veuillez nous contacter!</p>
@@ -231,5 +198,37 @@
 <script src="animate.js"></script>
 <script src="custom.js"></script>
 <script src="validate.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	let socket = io();
+	let el;
+
+	socket.on('broadcast', (msg) => {
+		console.log("received");
+		// el = document.getElementById('moves');
+		// el.innerHTML = msg;
+		if (msg == "scroll up") {
+			
+			window.scrollBy(0, -300);
+
+
+		} else if (msg == "scroll down") {
+
+			window.scrollBy(0, 300);
+
+
+		} else if (msg == "zoom in"){
+
+			document.body.style.zoom = "140%" 
+
+
+		}else if (msg == "zoom out"){
+			
+			document.body.style.zoom = "60%" 
+
+		}
+
+	});
+	</script>
 </body>
 </html>

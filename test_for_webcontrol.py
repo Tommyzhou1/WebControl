@@ -17,7 +17,7 @@ while true:
     def on_message(data):
         print("I received a message, the message is {0}".format(data))
         for i in range(len(data_set)):
-            time.sleep(1.5)
+            time.sleep(2.5)
             sio.emit('message',data_set[i])
 
 
