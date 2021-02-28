@@ -4,14 +4,14 @@ import time
 import json
 ## creates a new Async Socket IO Server
 sio = socketio.Client()
-sio.connect("https://web-control-game.herokuapp.com")
-# sio.connect("http://localhost:3000/")
+#sio.connect("https://web-control-game.herokuapp.com")
+sio.connect("http://localhost:3000")
 #mock data
+
+data_set = ['scroll up','scroll down','zoom in','zoom out']
 
 true = True
 while true:
-    
-    data_set = ['left','right','right','left','right','left','right','right','left','right','left']
 
     @sio.on('welcome')
     def on_message(data):

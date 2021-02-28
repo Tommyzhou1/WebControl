@@ -8,10 +8,10 @@ sio = socketio.Client()
 sio.connect("http://localhost:3000")
 #mock data
 
+data_set = ['left','right','right','left','right','left','right','right','left','right','left']
+
 true = True
 while true:
-    
-    data_set = ['left','right','right','left','right','left','right','right','left','right','left']
 
     @sio.on('welcome')
     def on_message(data):

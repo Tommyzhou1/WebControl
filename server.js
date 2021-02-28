@@ -1,30 +1,3 @@
-// const express = require('express');
-// const socketIO = require('socket.io');
-
-// const PORT = process.env.PORT ||  3000;
-// const INDEX = '/index.html';
-
-// const server = express()
-//   .set((req, res) => res.sendFile(INDEX, { root: __dirname }))
-//   .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-// const io = socketIO(server);
-
-// var temp;
-
-// io.on('connection', function(client){
-//   client.emit("welcome","hi"); //This is received by everyone
-//   client.on("message", function(data){
-//     temp = data;
-//     client.broadcast.emit("broadcast",data);
-//   });
-// });
-
-
-
-
-// TEST
-
 const express = require('express')
 const app = express()
 const socket = require('socket.io')
@@ -45,6 +18,17 @@ app.use('/fonts' , express.static(__dirname + 'fonts'))
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
+
+app.get('/home', (req, res) => {
+  //res.sendFile(`${__dirname}/views/contact.ejs`)
+  res.render('home')
+})
+
+app.get('/about', (req, res) => {
+  //res.sendFile(`${__dirname}/views/contact.ejs`)
+  res.render('about')
+})
+
 
 app.get('/contact', (req, res) => {
   //res.sendFile(`${__dirname}/views/contact.ejs`)
