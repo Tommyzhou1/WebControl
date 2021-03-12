@@ -29,6 +29,10 @@ app.get('/about', (req, res) => {
   res.render('about')
 })
 
+app.get('/gesture', (req, res) => {
+  //res.sendFile(`${__dirname}/views/contact.ejs`)
+  res.render('gesture')
+})
 
 app.get('/contact', (req, res) => {
   //res.sendFile(`${__dirname}/views/contact.ejs`)
